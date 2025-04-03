@@ -22,6 +22,7 @@ class TabsManager {
   }
 
   setIndicatorWidth() {
+    //metodo
     this.indicator.style.width = this.controls[0].clientWidth + "px"; //editar wl width al indicador (la linea azul)
   }
 
@@ -32,7 +33,7 @@ class TabsManager {
   }
 
   handleClick(ev) {
-    ev.preventDefault();
+    ev.preventDefault(); //evita el redireccionamiento de los link
 
     let button = ev.currentTarget;
 
