@@ -1,0 +1,34 @@
+html,
+body {
+  font-family: roboto;
+  background-color: #eee;
+}
+
+.acordion {
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.acordion .item {
+  padding: 7px;
+  max-height: 2em;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.acordion .item.active {
+  max-height: 37.5rem;
+  overflow-y: scroll;
+}
+
+.acordion .item header {
+  min-height: 2em;
+  line-height: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding: 0 0.3em;
+  cursor: pointer;
+}
