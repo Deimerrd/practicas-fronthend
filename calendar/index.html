@@ -10,8 +10,9 @@
     <div class="calendar"></div>
     <script src="main.js"></script>
     <script>
-      new Calendar({
+      calendar = new Calendar({
         container: document.querySelector(".calendar"),
+        onselect: function (date) {},
       });
     </script>
   </body>
