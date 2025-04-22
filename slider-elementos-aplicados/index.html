@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style media="screen">
+      .slider {
+        width: 600px;
+        height: 600px;
+        max-width: 100%;
+        max-height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+      .element {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
+
+        transition: left 0.5s;
+      }
+      .element.active {
+        z-index: 2;
+        left: 0px;
+      }
+      .element.start-out {
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div
+        class="element"
+        style="
+          background-image: url('./images/photo-1726607962647-84ec2451d553.avif');
+        "
+      ></div>
+
+      <div
+        class="element"
+        style="
+          background-image: url('./images/premium_photo-1744851723171-cfe67139e742.avif');
+        "
+      ></div>
+
+      <div
+        class="element"
+        style="
+          background-image: url('./images/premium_photo-1744967143306-0ec5b49ca2eb.avif');
+        "
+      ></div>
+    </div>
+    <script>
+      let elements = document.querySelectorAll(".element");
+      let currentIndex = -1;
+      next();
+
+      function next() {
+        currentIndex = currentIndex + 1;
+
+        if (currentIndex >= elements.length) currentIndex = 0;
+
+        let el = elements[currentIndex];
+
+        let activeElement = document.querySelector(".element.active");
+
+        if (activeElement) {
+          activeElement.classList.add("start-out");
+          setTimeout(moveActive, 500, activeElement);
+        }
+
+        el.classList.add("active");
+        setTimeout(next, 5000);
+      }
+
+      function moveActive(activeElement) {
+        activeElement.classList.remove("active");
+        activeElement.classList.remove("start-out");
+      }
+    </script>
+  </body>
+</html>
